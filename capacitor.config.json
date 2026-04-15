@@ -1,0 +1,9 @@
+{
+  "appId": "com.alafiabraiding.studio",
+  "appName": "Alafia Braiding Studio",
+  "webDir": ".",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}

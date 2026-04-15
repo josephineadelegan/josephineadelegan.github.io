@@ -1,0 +1,18 @@
+{
+  "name": "Alafia Braiding Studio",
+  "short_name": "Alafia",
+  "description": "Protective styling, booking, and studio details for Alafia Braiding Studio.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fbf6ef",
+  "theme_color": "#8f4a2c",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alafia Braiding Studio</title>
+    <meta name="theme-color" content="#8f4a2c" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Alafia" />
+    <meta
+      name="description"
+      content="Alafia Braiding Studio offers knotless braids, stitch braids, twists, and protective styling with a warm, premium experience."
+    />
+    <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/app-icon.svg" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Alafia Braiding Studio home">
+          <span class="brand-mark">A</span>
+          <span class="brand-text">
+            <strong>Alafia</strong>
+            <span>Braiding Studio</span>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Main">
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#faq">FAQ</a>
+          <a href="#booking" class="nav-cta">Book Now</a>
+        </nav>
+      </header>
+
+      <section class="studio-strip" aria-label="Studio details">
+        <p><strong>Open:</strong> Friday to Sunday, 10 AM to 6 PM</p>
+        <p><strong>Call:</strong> <a href="tel:+17035178964">703-517-8964</a></p>
+        <p>
+          <strong>Visit:</strong>
+          <a
+            href="https://maps.google.com/?q=815+Thayer+Avenue+Apt+906+Silver+Spring+MD+20910"
+            target="_blank"
+            rel="noreferrer"
+            >Silver Spring, MD</a
+          >
+        </p>
+        <button class="button button-secondary install-app-button is-hidden" id="install-app-button" type="button">
+          Install App
+        </button>
+      </section>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Protective styles. Luxury care. Rooted confidence.</p>
+            <h1>Braids that feel as good as they look.</h1>
+            <p class="hero-text">
+              From knotless braids and twists to custom scalp-friendly installs, Alafia Braiding
+              Studio creates polished styles with comfort, care, and a calm salon experience.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#booking">Request Appointment</a>
+              <a class="button button-secondary" href="#services">View Services</a>
+            </div>
+            <dl class="hero-stats" aria-label="Business highlights">
+              <div>
+                <dt>7+</dt>
+                <dd>signature styles</dd>
+              </div>
+              <div>
+                <dt>4.9/5</dt>
+                <dd>average client rating</dd>
+              </div>
+              <div>
+                <dt>Soft touch</dt>
+                <dd>tension-conscious installs</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero-card hero-media-card">
+            <video
+              class="hero-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              poster="https://adeleganjoy.github.io/AlafiaBraiding/images/profile_pic.jpeg"
+            >
+              <source src="assets/studio-reel.mov" type="video/quicktime" />
+              <source src="assets/studio-reel.mov" type="video/mp4" />
+            </video>
+            <div class="hero-card-inner">
+              <p class="card-label">Now booking</p>
+              <h2>Spring protective styling appointments</h2>
+              <ul class="feature-list">
+                <li>Knotless, feed-in, and boho braid options</li>
+                <li>Consultation support for length, color, and parting</li>
+                <li>Prep guidance sent after booking request</li>
+              </ul>
+              <a class="button button-tertiary" href="#booking">Start your request</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section intro-grid">
+          <article class="intro-card">
+            <p class="section-tag">Why clients come back</p>
+            <h2>Beautiful results without the rushed chair experience.</h2>
+            <p>
+              Every appointment is designed around neat parting, healthy edges, and styles that
+              last. We focus on comfort from prep through finish so your braids wear beautifully.
+            </p>
+          </article>
+          <article class="intro-note detail-note">
+            <p><strong>Studio:</strong> 815 Thayer Avenue, Apt 906, Silver Spring, MD 20910</p>
+            <p><strong>Hours:</strong> Friday, Saturday, Sunday from 10:00 AM to 6:00 PM</p>
+            <p><strong>Instagram:</strong> <a href="https://www.instagram.com/alafiabraidingsalon/" target="_blank" rel="noreferrer">@alafiabraidingsalon</a></p>
+          </article>
+        </section>
+
+        <section class="section about-section">
+          <div class="about-photo-card">
+            <img
+              src="https://adeleganjoy.github.io/AlafiaBraiding/images/profile_pic.jpeg"
+              alt="Owner of Alafia Braiding Salon"
+            />
+          </div>
+          <article class="about-copy">
+            <p class="section-tag">About the studio</p>
+            <h2>Creativity, care, and cultural intention in every appointment.</h2>
+            <p>
+              Alafia Braiding Salon blends artistry with a calm, welcoming experience. The studio's
+              approach centers neat execution, thoughtful styling, and making each client feel
+              confident, radiant, and cared for.
+            </p>
+            <div class="about-actions">
+              <a class="button button-secondary" href="tel:+17035178964">Call the studio</a>
+              <a
+                class="button button-secondary"
+                href="https://www.instagram.com/alafiabraidingsalon/"
+                target="_blank"
+                rel="noreferrer"
+                >View Instagram</a
+              >
+            </div>
+          </article>
+        </section>
+
+        <section id="services" class="section">
+          <div class="section-heading">
+            <p class="section-tag">Services</p>
+            <h2>Protective styling tailored to your look and schedule.</h2>
+            <p>
+              These are launch-ready starting prices and timing estimates for the current menu.
+              Length, fullness, curls, and custom parting can affect the final quote.
+            </p>
+          </div>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <p class="menu-eyebrow">Signature braids</p>
+              <h3>Knotless Braids</h3>
+              <p>Medium to long installs with a lightweight finish and reduced root tension.</p>
+              <dl class="menu-meta">
+                <div><dt>From</dt><dd>$180</dd></div>
+                <div><dt>Timing</dt><dd>4 to 6 hrs</dd></div>
+              </dl>
+            </article>
+            <article class="menu-card">
+              <p class="menu-eyebrow">Scalp braid styles</p>
+              <h3>Feed-In Cornrows</h3>
+              <p>Clean, defined braids for everyday wear, events, and vacation-ready looks.</p>
+              <dl class="menu-meta">
+                <div><dt>From</dt><dd>$95</dd></div>
+                <div><dt>Timing</dt><dd>2 to 3 hrs</dd></div>
+              </dl>
+            </article>
+            <article class="menu-card">
+              <p class="menu-eyebrow">Textured finish</p>
+              <h3>Boho Braids</h3>
+              <p>Loose curl detailing for movement, softness, and a luxe blended finish.</p>
+              <dl class="menu-meta">
+                <div><dt>From</dt><dd>$220</dd></div>
+                <div><dt>Timing</dt><dd>5 to 6 hrs</dd></div>
+              </dl>
+            </article>
+            <article class="menu-card">
+              <p class="menu-eyebrow">Twist installs</p>
+              <h3>Twists</h3>
+              <p>Senegalese, marley, and soft twist-inspired installs for a fuller look.</p>
+              <dl class="menu-meta">
+                <div><dt>From</dt><dd>$165</dd></div>
+                <div><dt>Timing</dt><dd>3.5 to 5 hrs</dd></div>
+              </dl>
+            </article>
+            <article class="menu-card">
+              <p class="menu-eyebrow">Little clients</p>
+              <h3>Kids Braiding</h3>
+              <p>Gentle styling sessions with neat parting and extra patience for tender scalps.</p>
+              <dl class="menu-meta">
+                <div><dt>From</dt><dd>$70</dd></div>
+                <div><dt>Timing</dt><dd>1.5 to 3 hrs</dd></div>
+              </dl>
+            </article>
+            <article class="menu-card">
+              <p class="menu-eyebrow">Refresh services</p>
+              <h3>Take Down + Prep</h3>
+              <p>Removal, detangling, and prep support before your next protective style.</p>
+              <dl class="menu-meta">
+                <div><dt>From</dt><dd>$45</dd></div>
+                <div><dt>Timing</dt><dd>45 to 90 min</dd></div>
+              </dl>
+            </article>
+          </div>
+          <div class="add-on-strip">
+            <p><strong>Add-ons:</strong> Wash + blow dry from $25</p>
+            <p><strong>Custom touches:</strong> Beads, cuffs, curls, and color blends quoted per style</p>
+            <p><strong>Booking note:</strong> Final pricing is confirmed after reviewing your request</p>
+          </div>
+        </section>
+
+        <section id="gallery" class="section">
+          <div class="section-heading">
+            <p class="section-tag">Gallery</p>
+            <h2>Looks clients love wearing out of the chair.</h2>
+          </div>
+          <div class="gallery-grid" aria-label="Style gallery">
+            <article class="gallery-card gallery-video-card">
+              <video class="gallery-video" autoplay muted loop playsinline controls>
+                <source src="assets/studio-reel.mov" type="video/quicktime" />
+                <source src="assets/studio-reel.mov" type="video/mp4" />
+              </video>
+              <div class="gallery-text">
+                <h3>Studio reel</h3>
+                <p>A real salon video added directly from your shared media.</p>
+              </div>
+            </article>
+            <article class="gallery-card gallery-photo-card">
+              <img
+                src="https://adeleganjoy.github.io/AlafiaBraiding/images/profile_pic.jpeg"
+                alt="Braider profile from Alafia Braiding Salon website"
+              />
+              <div class="gallery-text">
+                <h3>Meet the artist</h3>
+                <p>Public profile image imported from the current salon website.</p>
+              </div>
+            </article>
+            <article class="gallery-card accent-2">
+              <div class="gallery-text">
+                <h3>Curled Boho Ends</h3>
+                <p>Movement and texture for a softer statement style.</p>
+              </div>
+            </article>
+            <article class="gallery-card accent-3">
+              <div class="gallery-text">
+                <h3>Freestyle Stitch Braids</h3>
+                <p>Clean patterns with bold feed-in detail.</p>
+              </div>
+            </article>
+            <article class="gallery-card accent-4">
+              <div class="gallery-text">
+                <h3>Shoulder-Length Twists</h3>
+                <p>Low-maintenance styling with polished texture.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section split-section">
+          <div>
+            <p class="section-tag">The experience</p>
+            <h2>Clear prep, calm appointments, and styles built to last.</h2>
+          </div>
+          <div class="check-grid">
+            <article>
+              <h3>Before your visit</h3>
+              <p>We outline hair requirements, timing, and add-ons so there are no surprises.</p>
+            </article>
+            <article>
+              <h3>During your appointment</h3>
+              <p>Expect neat sectioning, comfortable tension, and a focused one-on-one session.</p>
+            </article>
+            <article>
+              <h3>Aftercare support</h3>
+              <p>Simple care tips help you protect your style and extend wear between appointments.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section contact-section">
+          <div class="section-heading">
+            <p class="section-tag">Contact</p>
+            <h2>Reach the studio, get directions, or book through Instagram.</h2>
+          </div>
+          <div class="card-grid contact-grid">
+            <article class="info-card">
+              <h3>Call or text</h3>
+              <p>Questions about availability, prep, or custom styles.</p>
+              <span><a href="tel:+17035178964">703-517-8964</a></span>
+            </article>
+            <article class="info-card">
+              <h3>Email</h3>
+              <p>Send inspiration, style questions, or appointment details.</p>
+              <span><a href="mailto:alafiabraidingsalon@gmail.com">alafiabraidingsalon@gmail.com</a></span>
+            </article>
+            <article class="info-card">
+              <h3>Visit the studio</h3>
+              <p>815 Thayer Avenue, Apt 906, Silver Spring, MD 20910</p>
+              <span>
+                <a
+                  href="https://maps.google.com/?q=815+Thayer+Avenue+Apt+906+Silver+Spring+MD+20910"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Open in Maps</a
+                >
+              </span>
+            </article>
+          </div>
+        </section>
+
+        <section id="reviews" class="section">
+          <div class="section-heading">
+            <p class="section-tag">Client love</p>
+            <h2>What people say after their appointment.</h2>
+          </div>
+          <div class="card-grid review-grid">
+            <blockquote class="review-card">
+              <p>
+                “My knotless braids were so neat and somehow still gentle on my edges. I booked my
+                next visit before I left.”
+              </p>
+              <footer>Danielle T.</footer>
+            </blockquote>
+            <blockquote class="review-card">
+              <p>
+                “The appointment was organized, calm, and professional. My daughter felt comfortable
+                the whole time.”
+              </p>
+              <footer>Monique R.</footer>
+            </blockquote>
+            <blockquote class="review-card">
+              <p>
+                “The parting was perfect and the style lasted. You can tell a lot of care goes into
+                every braid.”
+              </p>
+              <footer>Jasmine E.</footer>
+            </blockquote>
+          </div>
+        </section>
+
+        <section id="faq" class="section">
+          <div class="section-heading">
+            <p class="section-tag">FAQ</p>
+            <h2>Helpful details before you book.</h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>Do I need to come with my hair washed and blown out?</summary>
+              <p>Yes. Clean, stretched hair is preferred unless you request prep as an add-on.</p>
+            </details>
+            <details>
+              <summary>How long do appointments usually take?</summary>
+              <p>Most styles take 2 to 6 hours depending on size, length, and added curls.</p>
+            </details>
+            <details>
+              <summary>Can I request a custom size, length, or color blend?</summary>
+              <p>Absolutely. Use the booking form to describe the look you want and we’ll confirm availability.</p>
+            </details>
+            <details>
+              <summary>Is a deposit required?</summary>
+              <p>Deposits are typically collected once your appointment request is reviewed and approved.</p>
+            </details>
+          </div>
+        </section>
+
+        <section id="booking" class="section booking-section">
+          <div class="section-heading">
+            <p class="section-tag">Book now</p>
+            <h2>Request your next appointment.</h2>
+            <p>
+              Send your preferred service, schedule, and style notes. A confirmation summary appears
+              instantly, and you can use it when following up by phone or email.
+            </p>
+            <div class="booking-shortcuts">
+              <a class="button button-secondary" href="tel:+17035178964">Call now</a>
+              <a class="button button-secondary" href="mailto:alafiabraidingsalon@gmail.com">Email studio</a>
+              <a
+                class="button button-secondary"
+                href="https://www.instagram.com/alafiabraidingsalon/"
+                target="_blank"
+                rel="noreferrer"
+                >Instagram</a
+              >
+            </div>
+          </div>
+
+          <div class="booking-layout">
+            <form
+              class="booking-form"
+              id="booking-form"
+              action="https://formsubmit.co/ajax/alafiabraidingsalon@gmail.com"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="New Alafia Braiding booking request" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <label>
+                Full name
+                <input type="text" name="name" placeholder="Your full name" required />
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+              <label>
+                Phone
+                <input type="tel" name="phone" placeholder="(555) 555-5555" required />
+              </label>
+              <label>
+                Service
+                <select name="service" required>
+                  <option value="">Select a service</option>
+                  <option>Knotless Braids</option>
+                  <option>Feed-In Cornrows</option>
+                  <option>Boho Braids</option>
+                  <option>Twists</option>
+                  <option>Kids Braiding</option>
+                  <option>Take Down + Prep</option>
+                </select>
+              </label>
+              <label>
+                Preferred date
+                <input type="date" name="date" required />
+              </label>
+              <label>
+                Preferred time
+                <select name="time" required>
+                  <option value="">Select a time</option>
+                  <option>9:00 AM</option>
+                  <option>11:00 AM</option>
+                  <option>1:00 PM</option>
+                  <option>3:00 PM</option>
+                  <option>5:00 PM</option>
+                </select>
+              </label>
+              <label class="full-width">
+                Style notes
+                <textarea
+                  name="notes"
+                  rows="5"
+                  placeholder="Length, size, color preference, inspiration details, or prep questions"
+                ></textarea>
+              </label>
+              <div class="full-width form-actions">
+                <button class="button button-secondary" type="button" id="preview-button">Preview request</button>
+                <button class="button button-primary" type="submit" id="submit-button">Submit booking request</button>
+              </div>
+              <p class="form-helper full-width">
+                The live form sends to the salon email through FormSubmit. The first submission may require email activation from the studio inbox.
+              </p>
+            </form>
+
+            <aside class="booking-panel">
+              <div class="panel-block">
+                <p class="card-label">Booking notes</p>
+                <ul class="feature-list">
+                  <li>Appointment requests are reviewed before confirmation</li>
+                  <li>Studio hours are Friday through Sunday, 10:00 AM to 6:00 PM</li>
+                  <li>Hair requirements and deposit details are shared after approval</li>
+                  <li>Please arrive on time for the smoothest salon flow</li>
+                </ul>
+              </div>
+
+              <div class="panel-block">
+                <p class="card-label">Quick contact</p>
+                <ul class="feature-list">
+                  <li><a href="tel:+17035178964">703-517-8964</a></li>
+                  <li><a href="mailto:alafiabraidingsalon@gmail.com">alafiabraidingsalon@gmail.com</a></li>
+                  <li>
+                    <a href="https://www.instagram.com/alafiabraidingsalon/" target="_blank" rel="noreferrer"
+                      >@alafiabraidingsalon</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="panel-block confirmation-panel" id="confirmation-panel" aria-live="polite">
+                <p class="card-label">Request summary</p>
+                <p class="confirmation-placeholder">
+                  Your appointment summary will appear here after you submit the form.
+                </p>
+              </div>
+
+              <div class="panel-block submission-panel" id="submission-panel" aria-live="polite">
+                <p class="card-label">Submission status</p>
+                <p class="confirmation-placeholder" id="submission-message">
+                  Use Preview to review your request, then Submit booking request to send it to the salon inbox.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div>
+          <strong>Alafia Braiding Studio</strong>
+          <p>Protective styling with care, detail, and comfort at the center.</p>
+          <p>Friday to Sunday, 10:00 AM to 6:00 PM</p>
+        </div>
+        <div class="footer-links">
+          <a href="tel:+17035178964">703-517-8964</a>
+          <a href="mailto:alafiabraidingsalon@gmail.com">alafiabraidingsalon@gmail.com</a>
+          <a href="https://www.instagram.com/alafiabraidingsalon/" target="_blank" rel="noreferrer">@alafiabraidingsalon</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="#booking">Request an appointment</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
