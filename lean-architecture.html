@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lean Facility Architecture | Josephine Adelegan</title>
+    <style>
+        body { margin: 0; background: #111111; color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow: hidden; }
+        
+        /* Top Dashboard */
+        #top-bar { position: absolute; top: 0; left: 0; width: 100%; display: flex; align-items: center; padding: 15px 30px; background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0)); box-sizing: border-box; z-index: 10; pointer-events: none; }
+        .title { font-size: 18px; font-weight: bold; margin-right: 40px; }
+        .stats-container { display: flex; gap: 30px; }
+        .stat-group { display: flex; flex-direction: column; }
+        .label { font-size: 10px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .value { font-size: 16px; font-weight: bold; }
+        
+        /* Bottom Controls */
+        #bottom-bar { position: absolute; bottom: 0; left: 0; width: 100%; display: flex; align-items: center; padding: 20px 30px; background: rgba(20, 20, 25, 0.9); box-sizing: border-box; z-index: 10; justify-content: space-between; border-top: 1px solid #333; }
+        .slider-group { display: flex; align-items: center; flex-grow: 1; margin-right: 40px; }
+        .slider-group label { margin-right: 15px; font-size: 14px; font-weight: bold; color: #ccc; }
+        input[type="range"] { flex-grow: 1; max-width: 400px; cursor: pointer; }
+        .slider-value-display { margin-left: 15px; background: #333; padding: 4px 12px; border-radius: 4px; font-weight: bold; min-width: 30px; text-align: center; }
+        button { background: #444; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background 0.2s; }
+        button:hover { background: #555; }
+        .back-link { position: absolute; top: 18px; right: 24px; z-index: 20; color: white; text-decoration: none; background: rgba(20, 20, 25, 0.9); border: 1px solid #333; padding: 10px 14px; border-radius: 8px; font-size: 14px; font-weight: 600; }
+        .back-link:hover { background: rgba(40, 40, 48, 0.95); }
+    </style>
+</head>
+<body>
+
+    <a class="back-link" href="index.html#outputs">Back to portfolio</a>
+
+    <div id="top-bar">
+        <div class="title">Lean Facility Architecture</div>
+        <div class="stats-container">
+            <div class="stat-group">
+                <span class="label">Status</span>
+                <span class="value" id="val-status">Siloed/Reactive</span>
+            </div>
+            <div class="stat-group">
+                <span class="label">Footprint</span>
+                <span class="value" id="val-footprint">1446 m²</span>
+            </div>
+            <div class="stat-group">
+                <span class="label">Efficiency</span>
+                <span class="value" id="val-efficiency">15%</span>
+            </div>
+            <div class="stat-group">
+                <span class="label">Waste Reduction</span>
+                <span class="value" id="val-waste">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="bottom-bar">
+        <div class="slider-group">
+            <label>ML Predictability (%)</label>
+            <input type="range" id="ml-slider" min="0" max="100" value="0">
+            <div class="slider-value-display" id="slider-display">0</div>
+        </div>
+        <button onclick="document.getElementById('ml-slider').value = 0; document.getElementById('ml-slider').dispatchEvent(new Event('input'));">Reset Facility</button>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+        // Scene Setup
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.Fog(0x111111, 20, 60);
+        
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(15, 12, 20);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.target.set(0, 2, 0);
+
+        // Lights
+        const dirLight = new THREE.DirectionalLight(0xffffff, 1.2);
+        dirLight.position.set(10, 20, 10);
+        scene.add(dirLight);
+        scene.add(new THREE.AmbientLight(0x404040, 2));
+
+        // Grid
+        const gridHelper = new THREE.GridHelper(40, 40, 0x444444, 0x222222);
+        scene.add(gridHelper);
+
+        // Helper function to create floating text sprites
+        function createLabel(text, bgColor) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 256; canvas.height = 64;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 4;
+            ctx.strokeRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(text, canvas.width/2, canvas.height/2);
+            
+            const texture = new THREE.CanvasTexture(canvas);
+            const spriteMat = new THREE.SpriteMaterial({ map: texture });
+            const sprite = new THREE.Sprite(spriteMat);
+            sprite.scale.set(6, 1.5, 1);
+            return sprite;
+        }
+
+        // --- Facility Geometry ---
+        
+        // 1. Core Array (Central, Static)
+        const coreGeo = new THREE.BoxGeometry(4, 4, 4);
+        const coreMat = new THREE.MeshPhongMaterial({ color: 0x33bbee });
+        const core = new THREE.Mesh(coreGeo, coreMat);
+        core.position.set(0, 2, 0);
+        scene.add(core);
+        
+        const coreLabel = createLabel("CORE ARRAY", "#33bbee");
+        coreLabel.position.set(0, 5.5, 0);
+        scene.add(coreLabel);
+
+        // 2. Holding Tanks (Red, dynamic)
+        const tankGeo = new THREE.BoxGeometry(1, 1, 1); // Base geometry scaled later
+        const tankMat = new THREE.MeshPhongMaterial({ color: 0xdd3344 });
+        
+        const tank1 = new THREE.Mesh(tankGeo, tankMat);
+        const tank2 = new THREE.Mesh(tankGeo, tankMat);
+        scene.add(tank1, tank2);
+        
+        const tankLabel = createLabel("HOLDING TANKS", "#dd3344");
+        scene.add(tankLabel);
+
+        // 3. Chemicals (Tan, dynamic)
+        const chemGeo = new THREE.BoxGeometry(1, 1, 1);
+        const chemMat = new THREE.MeshPhongMaterial({ color: 0xccaa66 });
+        const chemicals = new THREE.Mesh(chemGeo, chemMat);
+        scene.add(chemicals);
+        
+        const chemLabel = createLabel("CHEMICALS", "#ccaa66");
+        scene.add(chemLabel);
+
+        // --- State Interpolation Logic ---
+        const slider = document.getElementById('ml-slider');
+        
+        function updateFacility() {
+            const t = slider.value / 100; // 0 to 1
+            
+            // Math helper for linear interpolation
+            const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
+
+            // Interpolate Tank 1 (Left)
+            tank1.scale.set(lerp(6, 0.8, t), lerp(2.5, 3, t), lerp(3, 0.8, t));
+            tank1.position.set(lerp(-8, -3.5, t), tank1.scale.y/2, lerp(0, 0, t));
+
+            // Interpolate Tank 2 (Right)
+            tank2.scale.set(lerp(6, 0.8, t), lerp(2.5, 3, t), lerp(3, 0.8, t));
+            tank2.position.set(lerp(8, 3.5, t), tank2.scale.y/2, lerp(0, 0, t));
+
+            // Interpolate Chemicals (Front)
+            chemicals.scale.set(lerp(4, 1, t), lerp(2, 1.5, t), lerp(3, 1, t));
+            chemicals.position.set(0, chemicals.scale.y/2, lerp(6, 3.5, t));
+
+            // Update Labels
+            tankLabel.position.set(tank1.position.x, tank1.scale.y + 1.5, tank1.position.z);
+            chemLabel.position.set(chemicals.position.x, chemicals.scale.y + 1.5, chemicals.position.z);
+
+            // Update UI Data
+            document.getElementById('slider-display').innerText = slider.value;
+            
+            if (t < 0.33) {
+                document.getElementById('val-status').innerText = "Siloed/Reactive";
+            } else if (t < 0.66) {
+                document.getElementById('val-status').innerText = "Data-Informed";
+            } else if (t < 0.99) {
+                document.getElementById('val-status').innerText = "Predictive";
+            } else {
+                document.getElementById('val-status').innerText = "Lean IPD";
+            }
+
+            document.getElementById('val-footprint').innerText = Math.round(lerp(1446, 217, t)) + " m²";
+            document.getElementById('val-efficiency').innerText = Math.round(lerp(15, 69, t)) + "%";
+            document.getElementById('val-waste').innerText = Math.round(lerp(0, 85, t)) + "%";
+        }
+
+        // Listen for slider changes
+        slider.addEventListener('input', updateFacility);
+        
+        // Initial setup call
+        updateFacility();
+
+        // Animation Loop
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        animate();
+    </script>
+</body>
+</html>
