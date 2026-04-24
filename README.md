@@ -33,4 +33,4 @@ This project already includes:
 
 Current recommended live URL:
 
-- `https://josephineadelegan.github.io`
+- `https://josephineadelegan.github.io/josephineadelegan/`
